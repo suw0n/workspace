@@ -6,12 +6,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class DeadLockTransferAdapter {
 
     private final TransferUseCase useCase;
+    private final Map<String, Object> accountLocks = new ConcurrentHashMap<>();
 
     public DeadLockTransferAdapter(final TransferUseCase useCase) {
         this.useCase = useCase;
     }
 
-    private final Map<String, Object> accountLocks = new ConcurrentHashMap<>();
     private Object getLock(final String id) {
         return accountLocks.computeIfAbsent(id, lock -> new Object());
     }
