@@ -3,12 +3,12 @@ package suw0n.simple_payment_service_with_synchronized.account.usecase;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public final class DeadLockTransferAdapter {
+public final class DeadlockTransferAdapter {
 
     private final TransferUseCase useCase;
     private final Map<String, Object> accountLocks = new ConcurrentHashMap<>();
 
-    public DeadLockTransferAdapter(final TransferUseCase useCase) {
+    public DeadlockTransferAdapter(final TransferUseCase useCase) {
         this.useCase = useCase;
     }
 
