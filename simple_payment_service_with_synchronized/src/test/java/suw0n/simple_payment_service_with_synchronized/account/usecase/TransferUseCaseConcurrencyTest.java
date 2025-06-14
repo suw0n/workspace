@@ -85,7 +85,7 @@ class TransferUseCaseConcurrencyTest {
     @Test
     @DisplayName("데드락을 고려하지 않은 실패 테스트")
     void failTestByDeadlock() throws InterruptedException {
-        DeadLockTransferAdapter adapter = new DeadLockTransferAdapter(useCase);
+        DeadlockTransferAdapter adapter = new DeadlockTransferAdapter(useCase);
         ExecutorService executor = Executors.newFixedThreadPool(10);
         CountDownLatch latch = new CountDownLatch(THREAD_COUNT);
 
